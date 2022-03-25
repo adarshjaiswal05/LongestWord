@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+function getVowels(str) {
+  var m = str.match(/[aeiou]/gi);
+  return m === null ? 0 : m.length;
+}
+
+
+function longestWord() {
+var string = "Smart people learn from everything and everyone, average people from their experience, stupid people already, have all the answers";
+    var str = string.split(/[ ,]/);
+    var longest = 0;
+    var word = str[1];
+    for (var i = 0; i < str.length - 1; i++) {
+   
+        if (longest <= str[i].length) {
+            longest = str[i].length;
+            word=str[i];
+if(getVowels(str[i])>=getVowels(word)){
+                word=str[i];
+               
+            }
+        }
+    }
+    window.alert(word);
+}
+</script>
+
+<noscript>Sorry, your browser does not support JavaScript!</noscript>
+<button type="button"
+onclick="longestWord()">
+Submit
+</button>
+</body>
+</html>
